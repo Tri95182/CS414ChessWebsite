@@ -1,0 +1,446 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "success": true,
+      "games": [
+        {
+          "white": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "black": {
+            "_id": "Cameron1",
+            "password": "129h"
+          },
+          "_id": "Match1",
+          "valid": true
+        },
+        {
+          "white": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "black": {
+            "_id": "Cameron1",
+            "password": "129h"
+          },
+          "_id": "Match3",
+          "valid": true
+        },
+        {
+          "white": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "black": {
+            "_id": "Cameron1",
+            "password": "129h"
+          },
+          "turn": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "_id": "Match7",
+          "valid": true
+        },
+        {
+          "white": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "black": {
+            "_id": "Cameron1",
+            "password": "129h"
+          },
+          "turn": {
+            "_id": "Cameron",
+            "password": "129h"
+          },
+          "_id": "Testing null black3",
+          "valid": true
+        }
+      ],
+      "requestType": "getActiveGames"
+    }
+  ],
+  "required": [
+    "success",
+    "games",
+    "requestType"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "title": "The success schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "games": {
+      "$id": "#/properties/games",
+      "type": "array",
+      "title": "The games schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          {
+            "white": {
+              "_id": "Cameron",
+              "password": "129h"
+            },
+            "black": {
+              "_id": "Cameron1",
+              "password": "129h"
+            },
+            "_id": "Match1",
+            "valid": true
+          },
+          {
+            "white": {
+              "_id": "Cameron",
+              "password": "129h"
+            },
+            "black": {
+              "_id": "Cameron1",
+              "password": "129h"
+            },
+            "_id": "Match3",
+            "valid": true
+          }
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/games/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/games/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "white": {
+                  "_id": "Cameron",
+                  "password": "129h"
+                },
+                "black": {
+                  "_id": "Cameron1",
+                  "password": "129h"
+                },
+                "_id": "Match1",
+                "valid": true
+              }
+            ],
+            "required": [
+              "white",
+              "black",
+              "_id",
+              "valid"
+            ],
+            "properties": {
+              "white": {
+                "$id": "#/properties/games/items/anyOf/0/properties/white",
+                "type": "object",
+                "title": "The white schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "_id": "Cameron",
+                    "password": "129h"
+                  }
+                ],
+                "required": [
+                  "_id",
+                  "password"
+                ],
+                "properties": {
+                  "_id": {
+                    "$id": "#/properties/games/items/anyOf/0/properties/white/properties/_id",
+                    "type": "string",
+                    "title": "The _id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Cameron"
+                    ]
+                  },
+                  "password": {
+                    "$id": "#/properties/games/items/anyOf/0/properties/white/properties/password",
+                    "type": "string",
+                    "title": "The password schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "129h"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "black": {
+                "$id": "#/properties/games/items/anyOf/0/properties/black",
+                "type": "object",
+                "title": "The black schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "_id": "Cameron1",
+                    "password": "129h"
+                  }
+                ],
+                "required": [
+                  "_id",
+                  "password"
+                ],
+                "properties": {
+                  "_id": {
+                    "$id": "#/properties/games/items/anyOf/0/properties/black/properties/_id",
+                    "type": "string",
+                    "title": "The _id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Cameron1"
+                    ]
+                  },
+                  "password": {
+                    "$id": "#/properties/games/items/anyOf/0/properties/black/properties/password",
+                    "type": "string",
+                    "title": "The password schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "129h"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "_id": {
+                "$id": "#/properties/games/items/anyOf/0/properties/_id",
+                "type": "string",
+                "title": "The _id schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Match1"
+                ]
+              },
+              "valid": {
+                "$id": "#/properties/games/items/anyOf/0/properties/valid",
+                "type": "boolean",
+                "title": "The valid schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            },
+            "additionalProperties": true
+          },
+          {
+            "$id": "#/properties/games/items/anyOf/1",
+            "type": "object",
+            "title": "The second anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "white": {
+                  "_id": "Cameron",
+                  "password": "129h"
+                },
+                "black": {
+                  "_id": "Cameron1",
+                  "password": "129h"
+                },
+                "turn": {
+                  "_id": "Cameron",
+                  "password": "129h"
+                },
+                "_id": "Match7",
+                "valid": true
+              }
+            ],
+            "required": [
+              "white",
+              "black",
+              "turn",
+              "_id",
+              "valid"
+            ],
+            "properties": {
+              "white": {
+                "$id": "#/properties/games/items/anyOf/1/properties/white",
+                "type": "object",
+                "title": "The white schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "_id": "Cameron",
+                    "password": "129h"
+                  }
+                ],
+                "required": [
+                  "_id",
+                  "password"
+                ],
+                "properties": {
+                  "_id": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/white/properties/_id",
+                    "type": "string",
+                    "title": "The _id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Cameron"
+                    ]
+                  },
+                  "password": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/white/properties/password",
+                    "type": "string",
+                    "title": "The password schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "129h"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "black": {
+                "$id": "#/properties/games/items/anyOf/1/properties/black",
+                "type": "object",
+                "title": "The black schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "_id": "Cameron1",
+                    "password": "129h"
+                  }
+                ],
+                "required": [
+                  "_id",
+                  "password"
+                ],
+                "properties": {
+                  "_id": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/black/properties/_id",
+                    "type": "string",
+                    "title": "The _id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Cameron1"
+                    ]
+                  },
+                  "password": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/black/properties/password",
+                    "type": "string",
+                    "title": "The password schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "129h"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "turn": {
+                "$id": "#/properties/games/items/anyOf/1/properties/turn",
+                "type": "object",
+                "title": "The turn schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "_id": "Cameron",
+                    "password": "129h"
+                  }
+                ],
+                "required": [
+                  "_id",
+                  "password"
+                ],
+                "properties": {
+                  "_id": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/turn/properties/_id",
+                    "type": "string",
+                    "title": "The _id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Cameron"
+                    ]
+                  },
+                  "password": {
+                    "$id": "#/properties/games/items/anyOf/1/properties/turn/properties/password",
+                    "type": "string",
+                    "title": "The password schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "129h"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "_id": {
+                "$id": "#/properties/games/items/anyOf/1/properties/_id",
+                "type": "string",
+                "title": "The _id schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Match7"
+                ]
+              },
+              "valid": {
+                "$id": "#/properties/games/items/anyOf/1/properties/valid",
+                "type": "boolean",
+                "title": "The valid schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "requestType": {
+      "$id": "#/properties/requestType",
+      "type": "string",
+      "title": "The requestType schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "getActiveGames"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

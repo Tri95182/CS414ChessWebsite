@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "requestType": "login",
+      "username": "AGoodUsername",
+      "password": "Password123"
+    }
+  ],
+  "required": [
+    "requestType",
+    "username",
+    "password"
+  ],
+  "properties": {
+    "requestType": {
+      "$id": "#/properties/requestType",
+      "type": "string",
+      "title": "The requestType schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "login"
+      ]
+    },
+    "username": {
+      "$id": "#/properties/username",
+      "type": "string",
+      "title": "The username schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "AGoodUsername"
+      ]
+    },
+    "password": {
+      "$id": "#/properties/password",
+      "type": "string",
+      "title": "The password schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Password123"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
